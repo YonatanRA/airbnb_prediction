@@ -10,7 +10,7 @@ __pycache__
 *.log
 /*.log
 selenium/
-
+catboost_info
 contraseñas.txt
 
 .env
