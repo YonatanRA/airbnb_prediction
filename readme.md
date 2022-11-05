@@ -41,11 +41,22 @@ Se plantea un escenario hipotético en el que un cliente posee propiedades dispo
 <font size="1.9"> \*\* *Opcional* </font>
 
 
- 
-
-
-
-
 ### 4 - Extras
 
 Si quieres/puedes hacer algún otro tipo de demostración de habilidades técnicas, aprovechando la riqueza de los datos, anímate! Lo tendremos en cuenta en la evaluación.
+
+
+
+
+# Proceso
+
+El proceso a seguir para este problema será el siguiente:
+    
++ 1) Limpieza de los datos. Comprobación de valores nulos, duplicados y tipo de dato.
++ 2) Transformación de datos. Normalización, codificación de variables categóricas, etc..
++ 3) Punto de referencia. Con los datos transformados tal cual vienen, se entrena un modelo sencillo y se mide su rendimiento.
++ 4) Exploración y selección de características. Se prueban varios métodos de selección.
++ 5) Entrenamiento del modelo de predicción. Se prueban varios modelos.
++ 6) Extracción de word embeddings con transformers (BERT, DistillBert..) para creación de variables basadas en las reviews. Prueba de modelo multimodal.
++ 7) Análisis completo por barrios. Visualización de mapas y análisis de la dinámica de precios según demanda.
++ 8) Dashboard.
