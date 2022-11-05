@@ -57,6 +57,6 @@ El proceso a seguir para este problema será el siguiente:
 + 3) Punto de referencia. Con los datos transformados tal cual vienen, se entrena un modelo sencillo y se mide su rendimiento.
 + 4) Exploración y selección de características. Se prueban varios métodos de selección.
 + 5) Entrenamiento del modelo de predicción. Se prueban varios modelos.
-+ 6) Extracción de word embeddings con transformers (BERT, DistillBert..) para creación de variables basadas en las reviews. Prueba de modelo multimodal.
++ 6) Extracción de word embeddings con transformers (BERT, DistilBert..) para creación de variables basadas en las reviews. Prueba de modelo multimodal.
 + 7) Análisis completo por barrios. Visualización de mapas y análisis de la dinámica de precios según demanda.
 + 8) Dashboard.
