@@ -1,108 +1,21 @@
-from datetime import date, timedelta, datetime
-
-import pandas as pd
 import geopandas as gpd
 from keplergl import KeplerGl
 from flask import Flask, render_template, request
 
 from tools.plots import treemap
+from tools.config import mapa_config
 
 import pickle
-
+import os
 
 app = Flask(__name__)
 
-data = gpd.read_file('data/total.geojson')
 
-modelo = pickle.load(open('model/catboost_airbnb.pk', 'rb'))
+PATH=os.path.dirname(os.path.abspath(__file__))
 
-mapa_config={'version': 'v1',
-                 'config': {'visState': {'filters': [],
-                   'layers': [{'id': '3m64kx8',
-                     'type': 'geojson',
-                     'config': {'dataId': 'Madrid',
-                      'label': 'Madrid',
-                      'color': [202, 242, 244],
-                      'highlightColor': [252, 242, 26, 255],
-                      'columns': {'geojson': 'geometry'},
-                      'isVisible': True,
-                      'visConfig': {'opacity': 0.8,
-                       'strokeOpacity': 0.8,
-                       'thickness': 0.5,
-                       'strokeColor': [18, 92, 119],
-                       'colorRange': {'name': 'Pink Wine 6',
-                        'type': 'sequential',
-                        'category': 'Uber',
-                        'colors': ['#2C1E3D',
-                         '#573660',
-                         '#83537C',
-                         '#A6758E',
-                         '#C99DA4',
-                         '#EDD1CA']},
-                       'strokeColorRange': {'name': 'Global Warming',
-                        'type': 'sequential',
-                        'category': 'Uber',
-                        'colors': ['#5A1846',
-                         '#900C3F',
-                         '#C70039',
-                         '#E3611C',
-                         '#F1920E',
-                         '#FFC300']},
-                       'radius': 10,
-                       'sizeRange': [0, 10],
-                       'radiusRange': [0, 50],
-                       'heightRange': [0, 500],
-                       'elevationScale': 17.4,
-                       'enableElevationZoomFactor': True,
-                       'stroked': True,
-                       'filled': True,
-                       'enable3d': True,
-                       'wireframe': False},
-                      'hidden': False,
-                      'textLabel': [{'field': None,
-                        'color': [255, 255, 255],
-                        'size': 18,
-                        'offset': [0, 0],
-                        'anchor': 'start',
-                        'alignment': 'center'}]},
-                     'visualChannels': {'colorField': {'name': 'avg_price', 'type': 'real'},
-                      'colorScale': 'quantile',
-                      'strokeColorField': None,
-                      'strokeColorScale': 'quantile',
-                      'sizeField': None,
-                      'sizeScale': 'linear',
-                      'heightField': {'name': 'avg_price', 'type': 'real'},
-                      'heightScale': 'linear',
-                      'radiusField': None,
-                      'radiusScale': 'linear'}}],
-                   'interactionConfig': {'tooltip': {'fieldsToShow': {'Madrid': [{'name': 'neighbourhood',
-                        'format': None},
-                       {'name': 'avg_price', 'format': None},
-                       {'name': 'count_', 'format': None}]},
-                     'compareMode': False,
-                     'compareType': 'absolute',
-                     'enabled': True},
-                    'brush': {'size': 0.5, 'enabled': False},
-                    'geocoder': {'enabled': False},
-                    'coordinate': {'enabled': False}},
-                   'layerBlending': 'normal',
-                   'splitMaps': [],
-                   'animationConfig': {'currentTime': None, 'speed': 1}},
-                  'mapState': {'bearing': 3.2660550458715605,
-                   'dragRotate': True,
-                   'latitude': 40.418132280553976,
-                   'longitude': -3.6675547392865,
-                   'pitch': 52.053764006523224,
-                   'zoom': 10.524764239108396,
-                   'isSplit': False},
-                  'mapStyle': {'styleType': 'satellite',
-                   'topLayerGroups': {},
-                   'visibleLayerGroups': {},
-                   'threeDBuildingColor': [3.7245996603793508,
-                    6.518049405663864,
-                    13.036098811327728],
-                   'mapStyles': {}}}}
-                
+
+data = gpd.read_file(PATH + '/data/total.geojson')
+modelo = pickle.load(open(PATH + '/model/catboost_airbnb.pk', 'rb'))
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -121,6 +34,7 @@ def dashboard():
                            salaries=precio,
                            hosts = hosts,
                            graphJSON=graph)
+
 
 
 @app.route('/prediccion/', methods=['POST', 'GET'])
@@ -173,18 +87,16 @@ def prediccion():
         return render_template('prediccion.html', camas=1, habitas=1, deposito=20, precio=0)
 
 
+    
 @app.route('/market_info/', methods=['POST', 'GET'])
 def market_info():
 
+    mapa=KeplerGl(height=600, width=800, config=mapa_config)
 
-    mapa=KeplerGl(height=600, width=800, config=mapa_config)  
+    mapa.add_data(data.copy(), 'Madrid')
 
-    mapa.add_data(data.copy(), 'Madrid')  
+    mapa.save_to_html(file_name=PATH + '/static/mapa/mapa.html')
 
-    mapa.save_to_html(file_name='static/mapa/mapa.html')  
-
-    
-    
     return render_template('market.html')
 
 
