@@ -50,16 +50,26 @@ El proceso a seguir para este problema será el siguiente:
 
 Para la correcta ejecución de todo el código, es conveniente instalar el entorno virtual de este repositorio ejecutando `conda env create -f entorno.yml` por terminal.
 
+Se puede ver un dashboard en el siguiente link: http://yonrod.pythonanywhere.com/
+
 
 ### 5 - Comentarios y Conclusiones
 
 En primer lugar, existen alojamientos con precios extremos, de hasta 10000€. He restringido mi análisis, y también el entrenamiento del modelo predictivo, a precios por debajo de 200€ la noche. Aunque para el estudio de dinámica de precios he dejado todos los datos extremos, puesto que hacen crecer mucho la media y genera diferencias significativas.
 
-En total, existen en Madrid 20372 distintos alojamientos de Airbnb, con un precio medio por noche de 73€. Analizando por barrios, voy primero a los extremos. El barrio con el precio medio por noche más barato es Horcajo en Moratalaz, mientras que el barrio con el precio más alto por noche es Recoletos es Salamanca. En cuanto al número de alojamientos, el barrio con menos airbnbs es El Pardo en Fuencarral y el barrio con más airbnbs es Embajadores en el Centro de Madrid.
-
-Tanto la mayor cantidad de airbnbs y de precio más alto, por supuesto, están en el centro de Madrid, salvo barrios como Mirasierra y Valsefuentes, ambos con precios medios superiores a 90€.
+En total, existen en Madrid 20372 distintos alojamientos de Airbnb, con un precio medio por noche de 73€. Analizando por barrios, voy primero a los extremos. El barrio con el precio medio por noche más barato es Horcajo en Moratalaz, mientras que el barrio con el precio más alto por noche es Recoletos es Salamanca. En cuanto al número de alojamientos, el barrio con menos airbnbs es El Pardo en Fuencarral y el barrio con más airbnbs es Embajadores en el Centro de Madrid. Tanto la mayor cantidad de airbnbs y de precio más alto, por supuesto, están en el centro de Madrid, salvo barrios como Mirasierra y Valdefuentes, ambos con precios medios superiores a 90€.
 
 
+En cuanto al modelo predictivo, explicaré primero la selección de variables. Primero he borrado todas esas columnas constantes y las que no son informativas. Luego he probado varios métodos distintos para realizar la última selección. Las variables con las que finalmente he entrenado han sido:
+
+```python
+['accommodates', 'air_conditioning', 'availability_30', 'availability_365', 'availability_60', 'availability_90',
+'bathrooms', 'bedrooms', 'beds', 'calculated_host_listings_count', 'calculated_host_listings_count_entire_homes',
+'calculated_host_listings_count_private_rooms', 'calculated_host_listings_count_shared_rooms', 'cleaning_fee',
+'dishwasher', 'extra_people', 'guests_included','latitude', 'longitude', 'maximum_nights', 'minimum_nights', 
+'number_of_reviews', 'number_of_reviews_ltm', 'room_type_private_room', 'room_type_shared_room', 'security_deposit',
+'price']
+```
 
 
 
