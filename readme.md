@@ -57,6 +57,7 @@ En primer lugar, existen alojamientos con precios extremos, de hasta 10000€. H
 
 En total, existen en Madrid 20372 distintos alojamientos de Airbnb, con un precio medio por noche de 73€. Analizando por barrios, voy primero a los extremos. El barrio con el precio medio por noche más barato es Horcajo en Moratalaz, mientras que el barrio con el precio más alto por noche es Recoletos es Salamanca. En cuanto al número de alojamientos, el barrio con menos airbnbs es El Pardo en Fuencarral y el barrio con más airbnbs es Embajadores en el Centro de Madrid.
 
+Tanto la mayor cantidad de airbnbs y de precio más alto, por supuesto, están en el centro de Madrid, salvo barrios como Mirasierra y Valsefuentes, ambos con precios medios superiores a 90€.
 
 
 
