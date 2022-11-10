@@ -32,7 +32,7 @@ Se plantea un escenario hipotético en el que un cliente posee propiedades dispo
 * 2.2.1 - Entrenar un modelo capaz de predecir el precio de alquiler diario de una propiedad en Airbnb. Además de las métricas obtenidas, se valorará la justificación del proceso de construcción del modelo (por ejemplo: variables utilizadas/descartadas, métrica/s de evaluación, selección de modelo/s, etc.), la creatividad en la construcción de nuevas variables (utilizando los datos de geolocalización y/o texto no estructurado) y el uso de diferentes técnicas predictivas.
 
 
-### 3 - Proceso
+## 3 - Proceso
 
 El proceso a seguir para este problema será el siguiente:
     
@@ -46,7 +46,7 @@ El proceso a seguir para este problema será el siguiente:
 + 8) Dashboard.
 
 
-### 4 - Uso
+## 4 - Uso
 
 **Todo el proceso paso a paso esta en la carpeta notebooks, cada uno de ellos tiene algunas explicaciones en su interior.**
 
@@ -55,7 +55,7 @@ Para la correcta ejecución de todo el código, es conveniente instalar el entor
 Se puede ver un dashboard en el siguiente link: http://yonrod.pythonanywhere.com/
 
 
-### 5 - Comentarios y Conclusiones
+## 5 - Comentarios y Conclusiones
 
 En primer lugar, existen alojamientos con precios extremos, de hasta 10000€. He restringido mi análisis, y también el entrenamiento del modelo predictivo, a precios por debajo de 200€ la noche. Aunque para el estudio de dinámica de precios he dejado todos los datos extremos, puesto que hacen crecer mucho la media y genera diferencias significativas.
 
