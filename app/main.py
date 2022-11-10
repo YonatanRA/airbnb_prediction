@@ -73,18 +73,22 @@ def prediccion():
         camas = request.form['camas']
         habitas = request.form['habitas']
         deposito = request.form['deposito']
+        servicio = request.form['servicio']
+        extra = request.form['extra']
 
         row_data['beds'] = int(camas)
         row_data['bedrooms'] = int(habitas)
         row_data['security_deposit'] = float(deposito)
+        row_data['bathrooms'] = float(servicio)
+        row_data['extra_people'] = float(extra)
 
         y_pred = modelo.predict(list(row_data.values()))
 
-        return render_template('prediccion.html', camas=camas, habitas=habitas, deposito=deposito, precio=round(y_pred, 2))
+        return render_template('prediccion.html', camas=camas, habitas=habitas, deposito=deposito, precio=round(y_pred, 2), servicio=servicio, extra=extra)
 
     else:
 
-        return render_template('prediccion.html', camas=1, habitas=1, deposito=20, precio=0)
+        return render_template('prediccion.html', camas=1, habitas=1, deposito=20, precio=0, servicio=1, extra=10)
 
 
     

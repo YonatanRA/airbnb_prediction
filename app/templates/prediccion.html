@@ -115,8 +115,8 @@
                         <div class="btn-wrapper">
                             <form id='submit_params' method="POST" action="{{ url_for('prediccion') }}">
 
-                               <label for="camas" class="" style="color: black; text-indent: -29px;"><div class="selector">Camas</div><select
-                                        class="camas" id="camas"
+                               <label for="bootcamp" class="" style="color: black; text-indent: -29px;"><div class="selector">Camas</div><select
+                                        class="bootcamp" id="camas"
                                         aria-labelledby="navbarDropdownMenuLink" name="camas" type="submit">
 
 
@@ -124,21 +124,23 @@
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
+                                            <option value="3">3</option>
 
                                 </select></label>
 
-                                <label for="habitas" class="" style="color: black; text-indent: -46px;"><div class="selector">Habitaciones</div><select
-                                        class="habitas" id="habitas"
+                                <label for="bootcamp" class="" style="color: black; text-indent: -46px;"><div class="selector">Habitaciones</div><select
+                                        class="bootcamp" id="habitas"
                                         aria-labelledby="navbarDropdownMenuLink" name="habitas" type="submit">
 
                                         <option value="{{habitas}}" selected>{{habitas}}</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
+                                        <option value="3">3</option>
 
                                 </select></label>
 
-                                <label for="deposito" class="" style="color: black; text-indent: -65px;"><div class="selector">Deposito</div><select class="deposito"
+                                <label for="bootcamp" class="" style="color: black; text-indent: -65px;"><div class="selector">Deposito</div><select class="bootcamp"
                                                  id="deposito"
                                                  aria-labelledby="navbarDropdownMenuLink"
                                                  name="deposito"
@@ -146,17 +148,53 @@
 
                                                  <option value="{{deposito}}" selected>{{deposito}}</option>
                                                  <option value="10">10</option>
-                                                 <option value="20">20</option>
-                                                 <option value="50">50</option>
+                                                <option value="20">20</option>
+                                                <option value="20">30</option>
+                                                <option value="20">40</option>
+                                                <option value="50">50</option>
 
 
                                     </select></label>
 
+
+                                    <label for="bootcamp" class="" style="color: black; text-indent: -65px;"><div class="selector">Baños</div><select class="bootcamp"
+                                        id="servicio"
+                                        aria-labelledby="navbarDropdownMenuLink"
+                                        name="servicio"
+                                        type="submit">
+
+                                        <option value="{{servicio}}" selected>{{servicio}}</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                 
+
+
+                                         </select></label>
+
+                                    <label for="bootcamp" class="" style="color: black; text-indent: -65px;"><div class="selector">Gente Extra</div><select class="bootcamp"
+                                        id="extra"
+                                        aria-labelledby="navbarDropdownMenuLink"
+                                        name="extra"
+                                        type="submit">
+
+                                        <option value="{{extra}}" selected>{{extra}}</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="20">30</option>
+                                        <option value="20">40</option>
+                                        <option value="50">50</option>
+
+
+                                        </select></label>
+
                                
 
-                                <button href="" class="btn btn-primary btn-darkblue" type="submit">
+                                <button href="" class="btn btn-primary btn-darkblue" type="submit" style="right: -200px">
                                     Filter
                                 </button>
+                                
                             </form>
                         </div>
                     </div>
