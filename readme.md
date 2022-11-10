@@ -29,24 +29,6 @@ Se plantea un escenario hipotético en el que un cliente posee propiedades dispo
 
 * 2.2.1 - Entrenar un modelo capaz de predecir el precio de alquiler diario de una propiedad en Airbnb. Además de las métricas obtenidas, se valorará la justificación del proceso de construcción del modelo (por ejemplo: variables utilizadas/descartadas, métrica/s de evaluación, selección de modelo/s, etc.), la creatividad en la construcción de nuevas variables (utilizando los datos de geolocalización y/o texto no estructurado) y el uso de diferentes técnicas predictivas.
 
-## 3 - Entregables
-
-* Código (\*)
-* Documentación
-* Informe (y/o presentación) con los resultados del análisis y la interpretación de las métricas de predicción obtenidas. Se valorarán positivamente las recomendaciones de negocio.
-* Propuesta de despliegue y/o productivización de la solución (\*\*)
-
-<font size="1.9">  \* *Puedes utilizar R y/o Python* </font>
-
-<font size="1.9"> \*\* *Opcional* </font>
-
-
-### 4 - Extras
-
-Si quieres/puedes hacer algún otro tipo de demostración de habilidades técnicas, aprovechando la riqueza de los datos, anímate! Lo tendremos en cuenta en la evaluación.
-
-
-
 
 # Proceso
 
