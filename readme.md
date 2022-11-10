@@ -72,5 +72,13 @@ En cuanto al modelo predictivo, explicaré primero la selección de variables. P
 ```
 
 
+Con estas variables y con precios entre 20€ y 196€, he entrenado un modelo de regresión [Catboost](https://catboost.ai/en/docs/concepts/python-reference_catboostregressor). Después de comprobar el sobreajuste por el ajuste de hiperparámetros he decido dejar los parámetros por defecto del modelo. LLegado a este punto, se realiza la evaluación del modelo. He usado tres métricas: RMSE, MAE y R2. Tanto el primero como el segundo miden errores medios, el tercero es en realidad una razón entre error y varianza. El resultado de la evaluación en la fase de testeo ha sido: `RMSE: 20.89, MAE: 14.44, R2: 0.71`. De realizar el entrenamiento con todos los valores extremos del dataset, el resultado de la evaluación es `RMSE: 256.92, MAE: 69.52, R2: 0.52`. En este último caso, la diferencia entre MAE y RMSE nos da el indicio de que efectivamente ahí están los outliers(se puede ver en la distribución del precio).
+
+
+
+Después de esto he entrenado un AutoML de [h2o](https://docs.h2o.ai/h2o/latest-stable/h2o-py/docs/intro.html), he intentado aplicar el análisis de sentimiento para generar nuevas variables, he intentado TFIDF con [spacy](https://spacy.io/) y también un [modelo multimodal](https://github.com/georgian-io/Multimodal-Toolkit) estacado en modelo BERT con un perceptrón de 2 capas como regresor. Estas aproximaciones necesitan más tiempo de análisis y de entrenamiento.
+
+
+
 
 
