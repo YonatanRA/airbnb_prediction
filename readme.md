@@ -52,8 +52,6 @@ El proceso a seguir para este problema será el siguiente:
 
 Para la correcta ejecución de todo el código, es conveniente instalar el entorno virtual de este repositorio ejecutando `conda env create -f entorno.yml` por terminal.
 
-Se puede ver un dashboard en el siguiente link: http://yonrod.pythonanywhere.com/
-
 
 ## 5 - Comentarios y Conclusiones
 
